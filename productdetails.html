@@ -6,6 +6,7 @@
     <title>Gadgets 7/11 | Product Details</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -23,233 +24,216 @@
             --text-primary: #0f172a;
             --text-secondary: #475569;
             --border: #e2e8f0;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            --success: #16a34a;
+            --danger: #dc2626;
         }
 
         body {
-            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Manrope', system-ui, sans-serif;
             background-color: var(--background);
             color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
-            padding-top: 96px; /* space for fixed header */
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
+            padding-top: 96px;
         }
 
         .header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.9);
+            top: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .header-content {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 1.5rem 2rem;
+            padding: 1.25rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo h1 {
-            font-size: 1.75rem;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
+            font-size: 1.8rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .logo p {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            letter-spacing: 0.2em;
-            font-weight: 500;
-        }
-
         .nav {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
         .nav a {
             text-decoration: none;
             color: var(--text-primary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            transition: color 0.3s;
             position: relative;
         }
 
-        .nav a:hover {
+        .nav a:hover, .nav a.active {
             color: var(--secondary);
         }
 
         .nav a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: -6px; left: 0;
+            width: 0; height: 2px;
             background: var(--secondary);
-            transition: width 0.3s ease;
+            transition: width 0.3s;
         }
 
-        .nav a:hover::after,
-        .nav a.active::after {
+        .nav a:hover::after, .nav a.active::after {
             width: 100%;
         }
 
         .btn {
-            padding: 0.875rem 2rem;
-            background: var(--primary);
+            padding: 0.8rem 1.8rem;
+            background: var(--secondary);
             color: white;
             border: none;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 0.95rem;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Manrope', sans-serif;
-            letter-spacing: 0.02em;
+            transition: all 0.3s;
         }
 
         .btn:hover {
-            background: var(--secondary);
+            background: #0c6881;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(14, 116, 144, 0.2);
+            box-shadow: 0 8px 16px rgba(14,116,144,0.25);
         }
 
         .section-wrapper {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 3rem 2rem 4rem;
+            padding: 4rem 2rem 6rem;
         }
 
         .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
             color: var(--primary);
+            font-weight: 700;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
 
         .product-card {
             background: var(--surface);
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            border-radius: 20px;
             overflow: hidden;
+            box-shadow: 0 12px 32px rgba(15,23,42,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
         }
 
-        .product-gallery {
-            display: grid;
-            grid-template-columns: 1fr;
-            position: relative;
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 48px rgba(15,23,42,0.12);
         }
 
-        .gallery-img {
+        .product-gallery img.active {
             width: 100%;
-            height: 240px;
+            height: 260px;
             object-fit: cover;
-            display: none;
-        }
-
-        .gallery-img.active {
-            display: block;
         }
 
         .product-info {
-            padding: 1.5rem 1.75rem 1.75rem;
+            padding: 1.75rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-title {
-            font-size: 1.35rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
         }
 
         .product-desc {
             font-size: 0.95rem;
             color: var(--text-secondary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            flex: 1;
         }
 
         .product-price {
-            font-size: 1.1rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin: 1rem 0;
         }
 
-        /* New: Reviews styling */
         .reviews {
-            margin: 1rem 0;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            margin: 1.25rem 0;
+            font-size: 0.92rem;
             border-top: 1px solid var(--border);
-            padding-top: 1rem;
+            padding-top: 1.25rem;
         }
 
         .reviews h4 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .rating {
             color: #f59e0b;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
         }
 
-        .review-quote {
+        .review-item {
+            margin: 0.75rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid #e2e8f0;
+        }
+
+        .review-positive {
+            color: var(--success);
+            font-weight: 500;
+        }
+
+        .review-negative {
+            color: var(--danger);
+            font-weight: 500;
+        }
+
+        .buyer-badge {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-left: 0.5rem;
             font-style: italic;
-            margin: 0.5rem 0;
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 80px;
-            }
-
-            .header-content {
-                padding-inline: 1.25rem;
-            }
-
-            .section-wrapper {
-                padding-inline: 1.25rem;
-            }
+            .section-wrapper { padding: 3rem 1.5rem; }
+            .section-title { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
+
     <!-- Header -->
-    <header class="header" id="header">
+    <header class="header">
         <div class="header-content">
             <div class="logo">
-                <h1>
-                    Gadgets 7/11
-                    <img src="—Pngtree—gadget icon graphic design template_3790049.png"
-                        alt="Gadgets 7/11 logo"
-                        style="height: 48px;">
+                <h1>Gadgets 7/11
+                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Logo" style="height: 48px;">
                 </h1>
                 <p>USEFUL | RELIABLE | AFFORDABLE</p>
             </div>
@@ -257,115 +241,117 @@
                 <a href="index.html">Home</a>
                 <a href="productcat.html">Product Categories</a>
                 <a href="productdetails.html" class="active">Product Details</a>
-                <a href="aboutus.html" class="inactive">About Us</a>
-                <a href="contactus.html" class="inactive">Contact Us</a>
-                <a href="shoppingcart.html" class="btn" style="display: inline-flex; align-items: center; color:white">
-                    Shopping Cart
-                    <i class="fa-solid fa-cart-shopping" style="margin-left: 8px; font-size: 1.2em; vertical-align: middle; color:white"></i>
+                <a href="aboutus.html">About Us</a>
+                <a href="contactus.html">Contact Us</a>
+                <a href="shoppingcart.html" class="btn">
+                    Shopping Cart <i class="fa-solid fa-cart-shopping" style="margin-left:8px;"></i>
                 </a>
             </nav>
         </div>
     </header>
-    <!-- END OF HEADER -->
 
     <!-- Smartphones & Tablets -->
     <main class="section-wrapper" id="smartphones-tablets">
-        <section id="smartphones-tablets">
-            <h2 class="section-title">Smartphones & Tablets</h2>
-            <div class="grid">
-                <div class="product-card">
-                    <div class="product-gallery">
-                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800" alt="iPhone 17 Pro Max front" class="gallery-img active">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Apple iPhone 17 Pro Max</h3>
-                        <p class="product-desc">6.9″ Super Retina XDR • A19 Bionic • 48MP triple cameras • AI features • All-day battery life</p>
-                        <div class="product-price">R20 000</div>
-
-                        <div class="reviews">
-                            <h4>Customer Reviews</h4>
-                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</div>
-                            <p class="review-quote">"Best battery I've ever had on an iPhone – lasts two full days easily!" – Sarah K.</p>
-                            <p class="review-quote">"Camera is insane for low-light shots, feels like a pro camera in my pocket." – Mike T.</p>
-                            <p class="review-quote">"Heavy but worth it for the performance and screen quality." – Alex R.</p>
-                        </div>
-
-                        <a href="shoppingcart.html#iphone17-pro-max" class="btn">Add to Cart</a>
-                    </div>
+        <h2 class="section-title">Smartphones & Tablets</h2>
+        <div class="grid">
+            <!-- iPhone 17 Pro Max -->
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800" alt="iPhone 17 Pro Max" class="gallery-img active">
                 </div>
+                <div class="product-info">
+                    <h3 class="product-title">Apple iPhone 17 Pro Max</h3>
+                    <p class="product-desc">6.9″ Super Retina XDR • A19 Bionic • 48MP triple cameras • AI features • All-day battery life</p>
+                    <div class="product-price">R20 000</div>
 
-                <div class="product-card">
-                    <div class="product-gallery">
-                        <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800" alt="Galaxy S25 Ultra front" class="gallery-img active">
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</div>
+                        <div class="review-item"><span class="review-positive">"Incredible battery – lasts two days easily!"</span> – Sarah K. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-positive">"Low-light camera is pro-level magic."</span> – Mike T. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-negative">"Feels too heavy and bulky for daily use."</span> – Alex R. <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Samsung Galaxy S25 Ultra</h3>
-                        <p class="product-desc">6.8″ Dynamic AMOLED • Snapdragon 8 Elite • 200MP camera • S Pen • Titanium build</p>
-                        <div class="product-price">R25 000</div>
 
-                        <div class="reviews">
-                            <h4>Customer Reviews</h4>
-                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8</div>
-                            <p class="review-quote">"S Pen is still the best stylus – perfect for notes and drawing!" – Jordan L.</p>
-                            <p class="review-quote">"Display is the brightest and sharpest I've seen, gaming is buttery smooth." – Taylor M.</p>
-                            <p class="review-quote">"Camera zoom is unreal, but AI features take some getting used to." – Chris P.</p>
-                        </div>
-
-                        <a href="shoppingcart.html#galaxy-s25-ultra" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-gallery">
-                        <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=800" alt="Pixel 10 Pro front" class="gallery-img active">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Google Pixel 10 Pro</h3>
-                        <p class="product-desc">Top AI camera system • Tensor G5 • 7 years updates • Super battery</p>
-                        <div class="product-price">R15 000</div>
-
-                        <div class="reviews">
-                            <h4>Customer Reviews</h4>
-                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7</div>
-                            <p class="review-quote">"Photos look so natural – best point-and-shoot camera phone!" – Emily S.</p>
-                            <p class="review-quote">"AI editing tools are magic, and 7 years of updates is reassuring." – David W.</p>
-                            <p class="review-quote">"Battery improved a lot over previous Pixels." – Lisa H.</p>
-                        </div>
-
-                        <a href="shoppingcart.html#pixel-10-pro" class="btn">Add to Cart</a>
-                    </div>
+                    <a href="shoppingcart.html#iphone17-pro-max" class="btn">Add to Cart</a>
                 </div>
             </div>
-        </section>
+
+            <!-- Galaxy S25 Ultra -->
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800" alt="Galaxy S25 Ultra" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Samsung Galaxy S25 Ultra</h3>
+                    <p class="product-desc">6.9″ Dynamic AMOLED 2X • Snapdragon 8 Elite • 200MP camera • S Pen • Titanium build</p>
+                    <div class="product-price">R25 000</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8</div>
+                        <div class="review-item"><span class="review-positive">"S Pen productivity is unmatched!"</span> – Jordan L. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-positive">"Brightest, smoothest display ever."</span> – Taylor M. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-negative">"Overheats during camera use and battery drains faster than expected."</span> – Chris P. <span class="buyer-badge">(Verified Buyer)</span></div>
+                    </div>
+
+                    <a href="shoppingcart.html#galaxy-s25-ultra" class="btn">Add to Cart</a>
+                </div>
+            </div>
+
+            <!-- Google Pixel 10 Pro -->
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=800" alt="Pixel 10 Pro" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Google Pixel 10 Pro</h3>
+                    <p class="product-desc">Top AI camera system • Tensor G5 • 7 years updates • Super battery</p>
+                    <div class="product-price">R15 000</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7</div>
+                        <div class="review-item"><span class="review-positive">"Photos are so natural and AI edits are brilliant."</span> – Emily S. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-positive">"Long software support gives peace of mind."</span> – David W. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-negative">"Some GPU glitches and occasional lag in games."</span> – Lisa H. <span class="buyer-badge">(Verified Buyer)</span></div>
+                    </div>
+
+                    <a href="shoppingcart.html#pixel-10-pro" class="btn">Add to Cart</a>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- Computers, Laptops and Accessories -->
+    <!-- Computers, Laptops & Accessories -->
     <main class="section-wrapper" id="ComputerAcc">
         <h2 class="section-title">Computers, Laptops & Accessories</h2>
         <div class="grid">
+            <!-- Apple Mac PC (M4, 2025) -->
             <div class="product-card">
                 <div class="product-gallery">
-                    <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800" alt="Apple Mac PC front" class="gallery-img active">
+                    <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800" alt="Apple Mac PC" class="gallery-img active">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Apple Mac PC (M4, 2025)</h3>
-                    <p class="product-desc">13″ Ultra Retina OLED • M4 chip • Pencil Pro support • Ultra-thin design</p>
+                    <p class="product-desc">Ultra Retina OLED display • M4 chip • Pencil Pro support • Ultra-thin & silent design</p>
                     <div class="product-price">R40 000</div>
 
                     <div class="reviews">
                         <h4>Customer Reviews</h4>
                         <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</div>
-                        <p class="review-quote">"Silent, powerful, and tiny – perfect desktop upgrade!" – Ryan B.</p>
-                        <p class="review-quote">"Handles 4K editing like nothing – best Mac I've owned." – Sophia G.</p>
+                        <div class="review-item"><span class="review-positive">"Silent powerhouse – perfect for editing!"</span> – Ryan B. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-positive">"Handles heavy tasks effortlessly."</span> – Sophia G. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-negative">"Limited ports – need dongles for everything."</span> – Pat N. <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
 
                     <a href="shoppingcart.html#apple-mac-pc-m4-2025" class="btn">Add to Cart</a>
                 </div>
             </div>
 
+            <!-- MacBook Pro (M3, 2023) – updated desc for accuracy -->
             <div class="product-card">
                 <div class="product-gallery">
-                    <img src="https://cdn.pixabay.com/photo/2017/08/03/11/22/laptop-2575689_1280.jpg" alt="MacBook Pro front" class="gallery-img active">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/03/11/22/laptop-2575689_1280.jpg" alt="MacBook Pro" class="gallery-img active">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">MacBook Pro (M3, 2023)</h3>
@@ -374,29 +360,31 @@
 
                     <div class="reviews">
                         <h4>Customer Reviews</h4>
-                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.9</div>
-                        <p class="review-quote">"Battery lasts forever – great for travel and editing." – Jamie K.</p>
-                        <p class="review-quote">"Screen and speakers are incredible for the size." – Pat N.</p>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.9</div>
+                        <div class="review-item"><span class="review-positive">"Battery life is insane for pro work."</span> – Jamie K. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-positive">"Display and audio are top-tier."</span> – Nicole F. <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
 
                     <a href="shoppingcart.html#macbook-pro-m3-2023" class="btn">Add to Cart</a>
                 </div>
             </div>
 
+            <!-- AirPods -->
             <div class="product-card">
                 <div class="product-gallery">
-                    <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=800" alt="AirPods front" class="gallery-img active">
+                    <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=800" alt="AirPods" class="gallery-img active">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">AirPods Pro (Latest)</h3>
-                    <p class="product-desc">Adaptive ANC • Spatial Audio • USB-C charging • Improved fit & sound</p>
+                    <p class="product-desc">Adaptive ANC • Spatial Audio • USB-C • Improved fit & sound quality</p>
                     <div class="product-price">R7 000</div>
 
                     <div class="reviews">
                         <h4>Customer Reviews</h4>
                         <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8</div>
-                        <p class="review-quote">"Noise cancellation is game-changing on flights!" – Nicole F.</p>
-                        <p class="review-quote">"Sound is richer now, and they stay in better." – Kevin D.</p>
+                        <div class="review-item"><span class="review-positive">"ANC blocks out everything on flights!"</span> – Kevin D. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-positive">"Sound is rich and clear now."</span> – Lisa H. <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-negative">"Fit still slips during intense workouts."</span> – Alex R. <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
 
                     <a href="shoppingcart.html#air-pods" class="btn">Add to Cart</a>
@@ -405,7 +393,7 @@
         </div>
     </main>
 
-    <!-- Gaming and Entertainment -->
+    <!-- Gaming & Entertainment -->
     <main class="section-wrapper" id="gaming">
         <h2 class="section-title">Gaming & Entertainment</h2>
         <div class="grid">
@@ -415,14 +403,14 @@
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Ryzen 4 Gaming PC</h3>
-                    <p class="product-desc">Ryzen 4 Gaming PC • RGB-lit tower case • High-performance GPU • Mechanical keyboard & RGB mouse • Immersive multi-monitor setup</p>
+                    <p class="product-desc">High-performance Ryzen setup • RGB tower • Powerful GPU • Mechanical keyboard & mouse</p>
                     <div class="product-price">R60 000</div>
 
                     <div class="reviews">
                         <h4>Customer Reviews</h4>
                         <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7</div>
-                        <p class="review-quote">"Runs everything at ultra settings – no lag!" – GamerX</p>
-                        <p class="review-quote">"RGB setup looks epic, great value for performance." – TechFan92</p>
+                        <div class="review-item"><span class="review-positive">"Ultra settings with zero lag!"</span> – GamerX <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-positive">"RGB looks epic – great value."</span> – TechFan92 <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
 
                     <a href="shoppingcart.html#ryzen-4-gaming-pc" class="btn">Add to Cart</a>
@@ -435,14 +423,14 @@
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Home Entertainment System</h3>
-                    <p class="product-desc">Large flat-screen TV • Tall white tower speakers • AV receiver & soundbar • Stylish setup</p>
+                    <p class="product-desc">Large 4K TV • Tower speakers • Soundbar & AV receiver • Immersive setup</p>
                     <div class="product-price">R30 000</div>
 
                     <div class="reviews">
                         <h4>Customer Reviews</h4>
                         <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.6</div>
-                        <p class="review-quote">"Movie nights feel like a theater – sound is immersive!" – FamilyGuy</p>
-                        <p class="review-quote">"Easy setup, looks premium in the living room." – HomeTheaterPro</p>
+                        <div class="review-item"><span class="review-positive">"Feels like a real theater at home!"</span> – FamilyGuy <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-negative">"Setup was more complicated than expected."</span> – HomeTheaterPro <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
 
                     <a href="shoppingcart.html#home-entertainment-system" class="btn">Add to Cart</a>
@@ -455,70 +443,65 @@
     <main class="section-wrapper" id="smarthome">
         <h2 class="section-title">Smart Home Devices</h2>
         <div class="grid">
-
-            <!-- Google Nest Hub Max -->
             <div class="product-card">
                 <div class="product-gallery">
-                    <img src="https://images.crutchfieldonline.com/ImageHandler/trim/869/652/products/2019/36/806/g806GA00639-o_other1.jpg" alt="Google Nest Hub Max front view" class="gallery-img active">
+                    <img src="https://images.crutchfieldonline.com/ImageHandler/trim/869/652/products/2019/36/806/g806GA00639-o_other1.jpg" alt="Google Nest Hub Max" class="gallery-img active">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Google Nest Hub Max (2026)</h3>
-                    <p class="product-desc">10" HD touchscreen • Built-in camera & mic • Google Assistant • Spatial audio • Matter hub • Video calling & routines</p>
+                    <p class="product-desc">10" HD touchscreen • Google Assistant • Spatial audio • Matter hub • Video calling</p>
                     <div class="product-price">R4 999</div>
 
                     <div class="reviews">
                         <h4>Customer Reviews</h4>
                         <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7</div>
-                        <p class="review-quote">"Great for recipes and video calls – display is sharp!" – MomOf3</p>
-                        <p class="review-quote">"Integrates perfectly with smart lights and cameras." – SmartHomeUser</p>
+                        <div class="review-item"><span class="review-positive">"Perfect for recipes and smart control."</span> – MomOf3 <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-negative">"Occasional connectivity drops with devices."</span> – SmartHomeUser <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
 
                     <a href="shoppingcart.html#google-nest-hub-max-2026" class="btn">Add to Cart</a>
                 </div>
             </div>
 
-            <!-- Philips Hue Starter Kit -->
             <div class="product-card">
                 <div class="product-gallery">
-                    <img src="https://m.media-amazon.com/images/I/51qRz8pp+eL._AC_UF894,1000_QL80_.jpg" alt="Philips Hue color bulbs starter kit" class="gallery-img active">
+                    <img src="https://m.media-amazon.com/images/I/51qRz8pp+eL._AC_UF894,1000_QL80_.jpg" alt="Philips Hue" class="gallery-img active">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Philips Hue Starter Kit (4 bulbs)</h3>
-                    <p class="product-desc">16 million colors • Matter compatible • Voice/app control • Energy efficient • Scenes & schedules • Bridge included</p>
+                    <p class="product-desc">16M colors • Matter compatible • Voice control • Scenes & schedules</p>
                     <div class="product-price">R3 499</div>
 
                     <div class="reviews">
                         <h4>Customer Reviews</h4>
                         <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8</div>
-                        <p class="review-quote">"Colors are vibrant – mood lighting is amazing!" – InteriorFan</p>
-                        <p class="review-quote">"Easy to set schedules, works with Alexa/Google." – TechMom</p>
+                        <div class="review-item"><span class="review-positive">"Vibrant colors transform the room mood!"</span> – InteriorFan <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-positive">"Easy app and voice integration."</span> – TechMom <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
 
                     <a href="shoppingcart.html#philips-hue-starter-kit" class="btn">Add to Cart</a>
                 </div>
             </div>
 
-            <!-- Aqara Smart Lock U400 -->
             <div class="product-card">
                 <div class="product-gallery">
-                    <img src="https://m.media-amazon.com/images/I/61STzCIW1TL._AC_UF1000,1000_QL80_.jpg" alt="Aqara U400 smart lock black" class="gallery-img active">
+                    <img src="https://m.media-amazon.com/images/I/61STzCIW1TL._AC_UF1000,1000_QL80_.jpg" alt="Aqara Smart Lock" class="gallery-img active">
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">Aqara Smart Lock U400</h3>
-                    <p class="product-desc">Fingerprint + keypad + app unlock • Matter support • Built-in camera • Auto-lock • Rechargeable battery • Secure & stylish</p>
+                    <p class="product-desc">Fingerprint/keypad/app unlock • Matter support • Built-in camera • Auto-lock</p>
                     <div class="product-price">R4 299</div>
 
                     <div class="reviews">
                         <h4>Customer Reviews</h4>
                         <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.6</div>
-                        <p class="review-quote">"Fingerprint unlock is fast and reliable – no more keys!" – BusyDad</p>
-                        <p class="review-quote">"Camera feature adds great security peace of mind." – HomeSecure</p>
+                        <div class="review-item"><span class="review-positive">"Fingerprint is super fast – love no keys!"</span> – BusyDad <span class="buyer-badge">(Verified Buyer)</span></div>
+                        <div class="review-item"><span class="review-negative">"Camera setup took longer than advertised."</span> – HomeSecure <span class="buyer-badge">(Verified Buyer)</span></div>
                     </div>
 
                     <a href="shoppingcart.html#aqara-smart-lock-u400" class="btn">Add to Cart</a>
                 </div>
             </div>
-
         </div>
     </main>
 
