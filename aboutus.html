@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gadgets 7/11 | About Us</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #0e7490;
+            --accent: #22d3ee;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-top: 96px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.2em;
+            font-weight: 500;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .nav a:hover {
+            color: var(--secondary);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after,
+        .nav a.active::after {
+            width: 100%;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: 'Manrope', sans-serif;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        .about-hero {
+            margin-bottom: 3rem;
+        }
+
+        .about-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-hero p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 640px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .about-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .about-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-card p {
+            font-size: 0.98rem;
+            color: var(--text-secondary);
+        }
+
+        .values-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .values-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .values-list strong {
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 80px;
+            }
+
+            .header-content {
+                padding-inline: 1.25rem;
+            }
+
+            .page-wrapper {
+                padding-inline: 1.25rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>Gadgets 7/11
+                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Gadgets 7/11 logo" style="height: 48px;">
+                </h1>
+                <p>USEFUL | RELIABLE | AFFORDABLE</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="productcat.html">Product Categories</a>
+                <a href="productdetails.html">Product Details</a>
+                <a href="aboutus.html" class="active">About Us</a>
+                <a href="contactus.html">Contact Us</a>
+                <a href="shoppingcart.html" class="btn" style="color:white">Shopping Cart <i class="fa-solid fa-cart-shopping" style="margin-left: 8px;"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-wrapper">
+        <section class="about-hero">
+            <h1>About Gadgets 7/11</h1>
+            <p>
+                Gadgets 7/11 is a tech store dedicated to making technology more accessible and convenient for everyone.
+            </p>
+        </section>
+
+        <section class="about-grid">
+            <article class="about-card">
+                <h2>Our story</h2>
+                <p>
+                    Gadgets 7/11 is a tech store dedicated to making technology more accessible and convenient for everyone.
+                    Our mission is to provide high-quality, user-friendly gadgets for everyday life, ranging from smartphones
+                    and tablets to smart home devices and accessories.
+                </p>
+                <p style="margin-top: 1rem;">
+                    We believe that technology should work for you, not the other way around. That’s why we focus on products
+                    that are not only innovative but also practical, durable, and easy to use.
+                </p>
+                <p style="margin-top: 1rem;">
+                    At Gadgets 7/11, we are committed to delivering excellent customer service and ensuring that every customer
+                    finds the right device to suit their needs. Whether you’re upgrading your gear or exploring new tech, we’re
+                    here to help you every step of the way.
+                </p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

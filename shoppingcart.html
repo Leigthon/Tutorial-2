@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gadgets 7/11 | Shopping Cart</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #0e7490;
+            --accent: #22d3ee;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-top: 96px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.2em;
+            font-weight: 500;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: var(--secondary);
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: 'Manrope', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+        }
+
+        .cart-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .cart-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .cart-empty {
+            background: var(--surface);
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .cart-empty i {
+            font-size: 4rem;
+            color: var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .cart-empty p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .cart-actions {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cart-items {
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-price {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .cart-summary {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .cart-summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .cart-summary-total {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .cart-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* CSS-only product selection using URL hash + :target */
+        .cart-view {
+            display: none;
+        }
+
+        .cart-empty {
+            display: block;
+        }
+
+        #iphone17-pro-max:target,
+        #galaxy-s25-ultra:target,
+        #ipad-pro-m4-2025:target,
+        #apple-mac-pc-m4-2025:target,
+        #macbook-pro-m3-2023:target,
+        #air-pods:target,
+        #ryzen-4-gaming-pc:target,
+        #home-entertainment-system:target,
+        #google-nest-hub-max-2026:target,
+        #philips-hue-starter-kit:target,
+        #aqara-smart-lock-u400:target {
+            display: block;
+        }
+
+        #iphone17-pro-max:target ~ .cart-empty,
+        #galaxy-s25-ultra:target ~ .cart-empty,
+        #ipad-pro-m4-2025:target ~ .cart-empty,
+        #apple-mac-pc-m4-2025:target ~ .cart-empty,
+        #macbook-pro-m3-2023:target ~ .cart-empty,
+        #air-pods:target ~ .cart-empty,
+        #ryzen-4-gaming-pc:target ~ .cart-empty,
+        #home-entertainment-system:target ~ .cart-empty,
+        #google-nest-hub-max-2026:target ~ .cart-empty,
+        #philips-hue-starter-kit:target ~ .cart-empty,
+        #aqara-smart-lock-u400:target ~ .cart-empty {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>
+                    Gadgets 7/11
+                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Gadgets 7/11 logo" style="height: 48px;">
+                </h1>
+                <p>USEFUL | RELIABLE | AFFORDABLE</p>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="productcat.html">Product Categories</a>
+                <a href="productdetails.html">Product Details</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="contactus.html">Contact Us</a>
+                <a href="shoppingcart.html" class="btn" style="color:white">
+                    Shopping Cart <i class="fa-solid fa-cart-shopping" style="margin-left: 8px;"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-container">
+        <h1 class="cart-title">Shopping Cart</h1>
+
+        <!-- Product views (CSS-only via :target) -->
+        <section id="iphone17-pro-max" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800" alt="Apple iPhone 17 Pro Max">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Apple iPhone 17 Pro Max</div>
+                        <div class="cart-item-price">R20 000</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R20 000</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R20 000</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="galaxy-s25-ultra" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800" alt="Samsung Galaxy S25 Ultra">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Samsung Galaxy S25 Ultra</div>
+                        <div class="cart-item-price">R25 000</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R25 000</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R25 000</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="ipad-pro-m4-2025" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=800" alt="Apple iPad Pro (M4, 2025)">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Apple iPad Pro (M4, 2025)</div>
+                        <div class="cart-item-price">R15 000</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R15 000</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R15 000</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="apple-mac-pc-m4-2025" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800" alt="Apple Mac PC (M4, 2025)">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Apple Mac PC (M4, 2025)</div>
+                        <div class="cart-item-price">R40 000</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R40 000</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R40 000</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="macbook-pro-m3-2023" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://cdn.pixabay.com/photo/2017/08/03/11/22/laptop-2575689_1280.jpg" alt="Macbook Pro (M3, 2023)">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Macbook Pro (M3, 2023)</div>
+                        <div class="cart-item-price">R30 000</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R30 000</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R30 000</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="air-pods" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=800" alt="Air Pods">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Air Pods</div>
+                        <div class="cart-item-price">R7 000</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R7 000</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R7 000</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="ryzen-4-gaming-pc" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://cdn.mos.cms.futurecdn.net/zWuViGWYZdyx2w42EgZ3bZ.jpg" alt="Ryzen 4 Gaming PC">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Ryzen 4 Gaming PC</div>
+                        <div class="cart-item-price">R60 000</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R60 000</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R60 000</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="home-entertainment-system" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://thumbs.dreamstime.com/b/modern-home-entertainment-setup-featuring-large-flat-screen-television-audio-system-stylish-living-area-showcases-351988377.jpg" alt="Home Entertainment System">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Home Entertainment System</div>
+                        <div class="cart-item-price">R30 000</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R30 000</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R30 000</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="google-nest-hub-max-2026" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://images.crutchfieldonline.com/ImageHandler/trim/869/652/products/2019/36/806/g806GA00639-o_other1.jpg" alt="Google Nest Hub Max (2026)">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Google Nest Hub Max (2026)</div>
+                        <div class="cart-item-price">R4 999</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R4 999</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R4 999</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="philips-hue-starter-kit" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://m.media-amazon.com/images/I/51qRz8pp+eL._AC_UF894,1000_QL80_.jpg" alt="Philips Hue Starter Kit (4 bulbs)">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Philips Hue Starter Kit (4 bulbs)</div>
+                        <div class="cart-item-price">R3 499</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R3 499</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R3 499</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="aqara-smart-lock-u400" class="cart-view">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img class="cart-item-img" src="https://m.media-amazon.com/images/I/61STzCIW1TL._AC_UF1000,1000_QL80_.jpg" alt="Aqara Smart Lock U400">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">Aqara Smart Lock U400</div>
+                        <div class="cart-item-price">R4 299</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-summary-row"><span>Subtotal</span><span>R4 299</span></div>
+                <div class="cart-summary-row cart-summary-total"><span>Total</span><span>R4 299</span></div>
+                <div class="cart-buttons">
+                    <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+                    <a href="productdetails.html" class="btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Default view when no item was selected -->
+        <div class="cart-empty">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>Your cart is empty. Go back and click Add to Cart on a product.</p>
+            <div class="cart-actions">
+                <a href="productdetails.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<DOCTYPE! html>
+    <html lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #0e7490;
+            --accent: #22d3ee;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --border: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            /* font-family:; */
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.2em;
+            font-weight: 500;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav a:hover {
+            color: var(--secondary);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(14, 116, 144, 0.2);
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+        }
+
+        .btn-primary:hover {
+            background: #0c6881;
+        }
+
+        
+        </style>
+
+          <!-- Header -->
+            <header class="header" id="header">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>Gadgets 7/11 
+                         <img src="—Pngtree—gadget icon graphic design template_3790049.png" 
+                            alt="Gadgets 7/11 logo" 
+                            style="vertical-align: middle; height: 48px; margin-right: 12px;">
+                        </h1>
+
+                        <p>USEFUL | RELIABLE | AFFORDABLE</p>
+                    </div>
+                    <nav class="nav">
+                        <a href="index.html">Home</a>
+                        <a href="productcat.html" class="active">Product Categories</a>
+                        <a href="productdetails.html" class="active">Product Details</a>
+                        <a href="aboutus.html" class="inactive">About Us</a>
+                        <a href="contactus.html" class="inactive">Contact Us</a>
+                        <a href="shoppingcart.html" class="btn" style="color:white">Shopping Cart <i class="fa-solid fa-cart-shopping" style="margin-left: 8px;"></i></a>
+                    <!--
+                        •	Home Page*
+                        •	About Us Page*
+                        •	Product Category Page* (at least three different categories, e.g., Smartphones & Tablets, Laptops & Accessories, Gaming & Entertainment, Smart Home Devices
+                        •	Product Detail Page*
+                        •	Shopping Cart Page* (static mock-ups that you navigate to from the product detail page after clicking checkout)
+                        •	Featured Brands Page
+                        •	Checkout Page*
+                        •	Order Confirmation Page (static page that is navigated to when checkout is selected on the checkout page. It does not need to be dynamic for now)
+                        •	Contact Us Page*
+                    -->
+
+                    </nav>
+                    <div class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </header>
+    <!--END OF HEADER-->
+
+    <!--Product Page Section-->
+
+           <section style="padding: 60px 20px; background: #f9fafb; text-align: center;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 50px; color: #111827; font-weight: 800; letter-spacing: -0.8px; line-height: 1.1;">
+                    Shop by Category
+                </h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; max-width: 1280px; margin: 0 auto;">
+                    
+                    <!-- Smartphones & Tablets -->
+                    <a href="productdetails.html#smartphones-tablets" style="text-decoration: none; color: inherit; display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: all 0.35s ease; background: white;">
+                    <div style="height: 220px; overflow: hidden; position: relative;">
+                        <img src="https://media.istockphoto.com/id/1071115500/photo/smartphones-mobile-phones-and-tablet-computers.jpg?s=1024x1024&w=is&k=20&c=dV4WVljfP7Pq-s9Xndb2MrfsgJOtOCSdLZhxZVkVdaA=" 
+                            alt="Smartphones and tablets display" 
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                    </div>
+                    <div style="padding: 28px 20px; background: white;">
+                        <h3 style="font-size: 1.65rem; margin: 0 0 12px; color: #1f2937; font-weight: 700;">Smartphones & Tablets</h3>
+                        <p style="font-size: 1.05rem; color: #6b7280; margin: 0; line-height: 1.5;">Discover the latest mobiles, tablets, cases, chargers & accessories</p>
+                    </div>
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4)); opacity: 0; transition: opacity 0.35s ease;"></div>
+                    </a>
+
+                    <!-- Laptops & Accessories -->
+                    <a href="productdetails.html#ComputerAcc" style="text-decoration: none; color: inherit; display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: all 0.35s ease; background: white; position: relative;">
+                    <div style="height: 220px; overflow: hidden;">
+                        <img src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg?semt=ais_hybrid&w=740&q=80" 
+                            alt="Laptop and tech accessories flat lay" 
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                    </div>
+                    <div style="padding: 28px 20px;">
+                        <h3 style="font-size: 1.65rem; margin: 0 0 12px; color: #1f2937; font-weight: 700;">Laptops & Accessories</h3>
+                        <p style="font-size: 1.05rem; color: #6b7280; margin: 0; line-height: 1.5;">Powerful laptops, mice, keyboards, bags, docks & everyday essentials</p>
+                    </div>
+                    </a>
+
+                    <!-- Gaming & Entertainment -->
+                    <a href="productdetails.html#gaming" style="text-decoration: none; color: inherit; display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: all 0.35s ease; background: white; position: relative;">
+                    <div style="height: 220px; overflow: hidden;">
+                        <img src="https://www.lg.com/content/dam/channel/wcms/uk/lg-experience/article-images/pro-gaming-setup/updated/ella-don-RHum9wpeeno-unsplash(768x).jpg" 
+                            alt="Professional RGB gaming setup" 
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                    </div>
+                    <div style="padding: 28px 20px;">
+                        <h3 style="font-size: 1.65rem; margin: 0 0 12px; color: #1f2937; font-weight: 700;">Gaming & Entertainment</h3>
+                        <p style="font-size: 1.05rem; color: #6b7280; margin: 0; line-height: 1.5;">Consoles, controllers, monitors, headsets, TVs & streaming gear</p>
+                    </div>
+                    </a>
+
+                    <!-- Smart Home Devices -->
+                    <a href="productdetails.html#smarthome" style="text-decoration: none; color: inherit; display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: all 0.35s ease; background: white; position: relative;">
+                    <div style="height: 220px; overflow: hidden;">
+                        <img src="pexels-kindelmedia-8566457.jpg" 
+                            alt="Connected smart home devices illustration" 
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                    </div>
+                    <div style="padding: 28px 20px;">
+                        <h3 style="font-size: 1.65rem; margin: 0 0 12px; color: #1f2937; font-weight: 700;">Smart Home Devices</h3>
+                        <p style="font-size: 1.05rem; color: #6b7280; margin: 0; line-height: 1.5;">Lights, cameras, speakers, thermostats, locks & automation essentials</p>
+                    </div>
+                    </a>
+
+                </div>
+
+                <style>
+                    a:hover {
+                    transform: translateY(-12px);
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+                    }
+                    a:hover img {
+                    transform: scale(1.08);
+                    }
+                    a:hover .overlay-like {
+                    opacity: 1;
+                    }
+                </style>
+            </section>
+    <!--End of product section-->
+
+
+
+    </html>  
+</DOCTYPE>
