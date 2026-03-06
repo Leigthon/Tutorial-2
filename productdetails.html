@@ -200,6 +200,31 @@
             margin-bottom: 1rem;
         }
 
+        /* New: Reviews styling */
+        .reviews {
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .reviews h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .rating {
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-quote {
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+
         @media (max-width: 768px) {
             body {
                 padding-top: 80px;
@@ -243,10 +268,10 @@
     </header>
     <!-- END OF HEADER -->
 
-     <!-- Smartphones & Tablets -->
+    <!-- Smartphones & Tablets -->
     <main class="section-wrapper" id="smartphones-tablets">
         <section id="smartphones-tablets">
-            <h2 class="section-title">Smartphones &amp; Tablets</h2>
+            <h2 class="section-title">Smartphones & Tablets</h2>
             <div class="grid">
                 <div class="product-card">
                     <div class="product-gallery">
@@ -256,6 +281,15 @@
                         <h3 class="product-title">Apple iPhone 17 Pro Max</h3>
                         <p class="product-desc">6.9″ Super Retina XDR • A19 Bionic • 48MP triple cameras • AI features • All-day battery life</p>
                         <div class="product-price">R20 000</div>
+
+                        <div class="reviews">
+                            <h4>Customer Reviews</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</div>
+                            <p class="review-quote">"Best battery I've ever had on an iPhone – lasts two full days easily!" – Sarah K.</p>
+                            <p class="review-quote">"Camera is insane for low-light shots, feels like a pro camera in my pocket." – Mike T.</p>
+                            <p class="review-quote">"Heavy but worth it for the performance and screen quality." – Alex R.</p>
+                        </div>
+
                         <a href="shoppingcart.html#iphone17-pro-max" class="btn">Add to Cart</a>
                     </div>
                 </div>
@@ -268,6 +302,15 @@
                         <h3 class="product-title">Samsung Galaxy S25 Ultra</h3>
                         <p class="product-desc">6.8″ Dynamic AMOLED • Snapdragon 8 Elite • 200MP camera • S Pen • Titanium build</p>
                         <div class="product-price">R25 000</div>
+
+                        <div class="reviews">
+                            <h4>Customer Reviews</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8</div>
+                            <p class="review-quote">"S Pen is still the best stylus – perfect for notes and drawing!" – Jordan L.</p>
+                            <p class="review-quote">"Display is the brightest and sharpest I've seen, gaming is buttery smooth." – Taylor M.</p>
+                            <p class="review-quote">"Camera zoom is unreal, but AI features take some getting used to." – Chris P.</p>
+                        </div>
+
                         <a href="shoppingcart.html#galaxy-s25-ultra" class="btn">Add to Cart</a>
                     </div>
                 </div>
@@ -277,150 +320,207 @@
                         <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=800" alt="Pixel 10 Pro front" class="gallery-img active">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Apple iPad Pro (M4, 2025)</h3>
-                        <p class="product-desc">Top AI camera system • Tensor G5 • 7 years updates  • Super battery</p>
+                        <h3 class="product-title">Google Pixel 10 Pro</h3>
+                        <p class="product-desc">Top AI camera system • Tensor G5 • 7 years updates • Super battery</p>
                         <div class="product-price">R15 000</div>
-                        <a href="shoppingcart.html#ipad-pro-m4-2025" class="btn">Add to Cart</a>
+
+                        <div class="reviews">
+                            <h4>Customer Reviews</h4>
+                            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7</div>
+                            <p class="review-quote">"Photos look so natural – best point-and-shoot camera phone!" – Emily S.</p>
+                            <p class="review-quote">"AI editing tools are magic, and 7 years of updates is reassuring." – David W.</p>
+                            <p class="review-quote">"Battery improved a lot over previous Pixels." – Lisa H.</p>
+                        </div>
+
+                        <a href="shoppingcart.html#pixel-10-pro" class="btn">Add to Cart</a>
                     </div>
                 </div>
-                </div>
-                </main>
-
-            
-            <!--Computer , Laptops and Accesories-->
-            
-             <main class="section-wrapper" id="ComputerAcc">
-                <h2 class="section-title">Computers ,Laptops &amp; Accessories</h2>
-                <div class="grid">
-
-                <div class="product-card">
-                    <div class="product-gallery">
-                        <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800" alt="iPad Pro front" class="gallery-img active">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Apple Mac PC(M4, 2025)</h3>
-                        <p class="product-desc">13″ Ultra Retina OLED • M4 chip • Pencil Pro support • Ultra-thin design</p>
-                        <div class="product-price">R40 000</div>
-                        <a href="shoppingcart.html#apple-mac-pc-m4-2025" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-gallery">
-                        <img src="https://cdn.pixabay.com/photo/2017/08/03/11/22/laptop-2575689_1280.jpg" alt="iPad Pro front" class="gallery-img active">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Macbook Pro (M3, 2023)</h3>
-                        <p class="product-desc">13″ Ultra Retina OLED • M4 chip • Pencil Pro support • Ultra-thin design</p>
-                        <div class="product-price">R30 000</div>
-                        <a href="shoppingcart.html#macbook-pro-m3-2023" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-
-
-                <div class="product-card">
-                    <div class="product-gallery">
-                        <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=800" alt="iPad Pro front" class="gallery-img active">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Air Pods</h3>
-                        <p class="product-desc">13″ Ultra Retina OLED • M4 chip • Pencil Pro support • Ultra-thin design</p>
-                        <div class="product-price">R7 000</div>
-                        <a href="shoppingcart.html#air-pods" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-
-
             </div>
         </section>
     </main>
 
-    <!--Gaming and Entertainment-->
+    <!-- Computers, Laptops and Accessories -->
+    <main class="section-wrapper" id="ComputerAcc">
+        <h2 class="section-title">Computers, Laptops & Accessories</h2>
+        <div class="grid">
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800" alt="Apple Mac PC front" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Apple Mac PC (M4, 2025)</h3>
+                    <p class="product-desc">13″ Ultra Retina OLED • M4 chip • Pencil Pro support • Ultra-thin design</p>
+                    <div class="product-price">R40 000</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</div>
+                        <p class="review-quote">"Silent, powerful, and tiny – perfect desktop upgrade!" – Ryan B.</p>
+                        <p class="review-quote">"Handles 4K editing like nothing – best Mac I've owned." – Sophia G.</p>
+                    </div>
+
+                    <a href="shoppingcart.html#apple-mac-pc-m4-2025" class="btn">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/03/11/22/laptop-2575689_1280.jpg" alt="MacBook Pro front" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">MacBook Pro (M3, 2023)</h3>
+                    <p class="product-desc">14″ Liquid Retina XDR • M3 Pro chip • Exceptional battery • ProMotion display</p>
+                    <div class="product-price">R30 000</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.9</div>
+                        <p class="review-quote">"Battery lasts forever – great for travel and editing." – Jamie K.</p>
+                        <p class="review-quote">"Screen and speakers are incredible for the size." – Pat N.</p>
+                    </div>
+
+                    <a href="shoppingcart.html#macbook-pro-m3-2023" class="btn">Add to Cart</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=800" alt="AirPods front" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">AirPods Pro (Latest)</h3>
+                    <p class="product-desc">Adaptive ANC • Spatial Audio • USB-C charging • Improved fit & sound</p>
+                    <div class="product-price">R7 000</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8</div>
+                        <p class="review-quote">"Noise cancellation is game-changing on flights!" – Nicole F.</p>
+                        <p class="review-quote">"Sound is richer now, and they stay in better." – Kevin D.</p>
+                    </div>
+
+                    <a href="shoppingcart.html#air-pods" class="btn">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Gaming and Entertainment -->
     <main class="section-wrapper" id="gaming">
-       <section id="gaming"></section>
-
-                <h2 class="section-title">Gaming &amp; Entertainment</h2>
-                <div class="grid">
-
-                <div class="product-card">
-                    <div class="product-gallery">
-                        <img src="https://cdn.mos.cms.futurecdn.net/zWuViGWYZdyx2w42EgZ3bZ.jpg" alt="iPad Pro front" class="gallery-img active">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Ryzen 4 Gaming PC</h3>
-                        <p class="product-desc">Ryzen 4 Gaming PC • RGB-lit tower case • High-performance GPU • Mechanical keyboard & RGB mouse • Immersive multi-monitor setup</p>
-                        <div class="product-price">R60 000</div>
-                        <a href="shoppingcart.html#ryzen-4-gaming-pc" class="btn">Add to Cart</a>
-                    </div>
+        <h2 class="section-title">Gaming & Entertainment</h2>
+        <div class="grid">
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="https://cdn.mos.cms.futurecdn.net/zWuViGWYZdyx2w42EgZ3bZ.jpg" alt="Ryzen Gaming PC" class="gallery-img active">
                 </div>
+                <div class="product-info">
+                    <h3 class="product-title">Ryzen 4 Gaming PC</h3>
+                    <p class="product-desc">Ryzen 4 Gaming PC • RGB-lit tower case • High-performance GPU • Mechanical keyboard & RGB mouse • Immersive multi-monitor setup</p>
+                    <div class="product-price">R60 000</div>
 
-                <div class="product-card">
-                    <div class="product-gallery">
-                        <img src="https://thumbs.dreamstime.com/b/modern-home-entertainment-setup-featuring-large-flat-screen-television-audio-system-stylish-living-area-showcases-351988377.jpg" alt="iPad Pro front" class="gallery-img active">
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7</div>
+                        <p class="review-quote">"Runs everything at ultra settings – no lag!" – GamerX</p>
+                        <p class="review-quote">"RGB setup looks epic, great value for performance." – TechFan92</p>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Home Enterntainment system</h3>
-                        <p class="product-desc">Large flat-screen TV • Tall white tower speakers • AV receiver & soundbar • Stylish blue-patterned wall • Modern living room setup</p>
-                        <div class="product-price">R30 000</div>
-                        <a href="shoppingcart.html#home-entertainment-system" class="btn">Add to Cart</a>
-                    </div>
+
+                    <a href="shoppingcart.html#ryzen-4-gaming-pc" class="btn">Add to Cart</a>
                 </div>
-
-
             </div>
-        </section>
+
+            <div class="product-card">
+                <div class="product-gallery">
+                    <img src="https://thumbs.dreamstime.com/b/modern-home-entertainment-setup-featuring-large-flat-screen-television-audio-system-stylish-living-area-showcases-351988377.jpg" alt="Home Entertainment" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Home Entertainment System</h3>
+                    <p class="product-desc">Large flat-screen TV • Tall white tower speakers • AV receiver & soundbar • Stylish setup</p>
+                    <div class="product-price">R30 000</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.6</div>
+                        <p class="review-quote">"Movie nights feel like a theater – sound is immersive!" – FamilyGuy</p>
+                        <p class="review-quote">"Easy setup, looks premium in the living room." – HomeTheaterPro</p>
+                    </div>
+
+                    <a href="shoppingcart.html#home-entertainment-system" class="btn">Add to Cart</a>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <!-- Smart Home Devices -->
     <main class="section-wrapper" id="smarthome">
         <h2 class="section-title">Smart Home Devices</h2>
         <div class="grid">
 
-            <!-- Google Nest Hub Max (smart display) -->
+            <!-- Google Nest Hub Max -->
             <div class="product-card">
-            <div class="product-gallery">
-                <img src="https://images.crutchfieldonline.com/ImageHandler/trim/869/652/products/2019/36/806/g806GA00639-o_other1.jpg" alt="Google Nest Hub Max front view" class="gallery-img active">
-                <img src="https://www.androidauthority.com/wp-content/uploads/2019/09/Google-Home-Hub-Max-review-13.jpg" alt="Nest Hub Max in use with video call" class="gallery-img">
-                <img src="https://s.yimg.com/ny/api/res/1.2/CSGIkGnnnsHtUvHErwxXzw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTcyMA--/https://s.yimg.com/os/creatr-uploaded-images/2019-05/ba3a25c0-70e7-11e9-bff7-703985d85f07" alt="Nest Hub Max on stand" class="gallery-img">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Google Nest Hub Max (2026)</h3>
-                <p class="product-desc">10" HD touchscreen • Built-in camera & mic • Google Assistant • Spatial audio • Matter hub • Video calling & routines</p>
-                <div class="product-price">R4 999</div>
-                <a href="shoppingcart.html#google-nest-hub-max-2026" class="btn">Add to Cart</a>
-            </div>
+                <div class="product-gallery">
+                    <img src="https://images.crutchfieldonline.com/ImageHandler/trim/869/652/products/2019/36/806/g806GA00639-o_other1.jpg" alt="Google Nest Hub Max front view" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Google Nest Hub Max (2026)</h3>
+                    <p class="product-desc">10" HD touchscreen • Built-in camera & mic • Google Assistant • Spatial audio • Matter hub • Video calling & routines</p>
+                    <div class="product-price">R4 999</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7</div>
+                        <p class="review-quote">"Great for recipes and video calls – display is sharp!" – MomOf3</p>
+                        <p class="review-quote">"Integrates perfectly with smart lights and cameras." – SmartHomeUser</p>
+                    </div>
+
+                    <a href="shoppingcart.html#google-nest-hub-max-2026" class="btn">Add to Cart</a>
+                </div>
             </div>
 
-            <!-- Philips Hue Smart Bulb Starter Kit -->
+            <!-- Philips Hue Starter Kit -->
             <div class="product-card">
-            <div class="product-gallery">
-                <img src="https://m.media-amazon.com/images/I/51qRz8pp+eL._AC_UF894,1000_QL80_.jpg" alt="Philips Hue color bulbs starter kit" class="gallery-img active">
-                <img src="https://m.media-amazon.com/images/I/41ve63H9SjL._AC_UF894,1000_QL80_.jpg" alt="Hue bulbs glowing pink" class="gallery-img">
-                <img src="https://m.media-amazon.com/images/I/71-iLtMbI2L.jpg" alt="Hue bulbs with bridge" class="gallery-img">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Philips Hue Starter Kit (4 bulbs)</h3>
-                <p class="product-desc">16 million colors • Matter compatible • Voice/app control • Energy efficient • Scenes & schedules • Bridge included</p>
-                <div class="product-price">R3 499</div>
-                <a href="shoppingcart.html#philips-hue-starter-kit" class="btn">Add to Cart</a>
-            </div>
+                <div class="product-gallery">
+                    <img src="https://m.media-amazon.com/images/I/51qRz8pp+eL._AC_UF894,1000_QL80_.jpg" alt="Philips Hue color bulbs starter kit" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Philips Hue Starter Kit (4 bulbs)</h3>
+                    <p class="product-desc">16 million colors • Matter compatible • Voice/app control • Energy efficient • Scenes & schedules • Bridge included</p>
+                    <div class="product-price">R3 499</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8</div>
+                        <p class="review-quote">"Colors are vibrant – mood lighting is amazing!" – InteriorFan</p>
+                        <p class="review-quote">"Easy to set schedules, works with Alexa/Google." – TechMom</p>
+                    </div>
+
+                    <a href="shoppingcart.html#philips-hue-starter-kit" class="btn">Add to Cart</a>
+                </div>
             </div>
 
             <!-- Aqara Smart Lock U400 -->
             <div class="product-card">
-            <div class="product-gallery">
-                <img src="https://m.media-amazon.com/images/I/61STzCIW1TL._AC_UF1000,1000_QL80_.jpg" alt="Aqara U400 smart lock black" class="gallery-img active">
-                <img src="https://m.media-amazon.com/images/I/61SQWE9lAlL._AC_UF894,1000_QL80_.jpg" alt="Aqara U400 silver version" class="gallery-img">
-                <img src="https://images.macrumors.com/t/Gq2PGwIZL7iy89zK6Angs94Hte8=/1600x1200/smart/article-new/2026/01/aqara-u400-uwb-button.jpg" alt="Aqara U400 on door" class="gallery-img">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Aqara Smart Lock U400</h3>
-                <p class="product-desc">Fingerprint + keypad + app unlock • Matter support • Built-in camera • Auto-lock • Rechargeable battery • Secure & stylish</p>
-                <div class="product-price">R4 299</div>
-                <a href="shoppingcart.html#aqara-smart-lock-u400" class="btn">Add to Cart</a>
-            </div>
+                <div class="product-gallery">
+                    <img src="https://m.media-amazon.com/images/I/61STzCIW1TL._AC_UF1000,1000_QL80_.jpg" alt="Aqara U400 smart lock black" class="gallery-img active">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Aqara Smart Lock U400</h3>
+                    <p class="product-desc">Fingerprint + keypad + app unlock • Matter support • Built-in camera • Auto-lock • Rechargeable battery • Secure & stylish</p>
+                    <div class="product-price">R4 299</div>
+
+                    <div class="reviews">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.6</div>
+                        <p class="review-quote">"Fingerprint unlock is fast and reliable – no more keys!" – BusyDad</p>
+                        <p class="review-quote">"Camera feature adds great security peace of mind." – HomeSecure</p>
+                    </div>
+
+                    <a href="shoppingcart.html#aqara-smart-lock-u400" class="btn">Add to Cart</a>
+                </div>
             </div>
 
-       
-        </main>
+        </div>
+    </main>
+
 </body>
 </html>
