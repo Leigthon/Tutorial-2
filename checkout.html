@@ -4,53 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gadgets 7/11 | Checkout</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body style="margin:0; padding:0; font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif; background-color:#f8fafc; color:#0f172a; line-height:1.6; padding-top:96px;">
+<body class="page-with-fixed-header">
 
     <!-- Header -->
-    <header style="position:fixed; top:0; left:0; right:0; background:rgba(255,255,255,0.9); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); border-bottom:1px solid #e2e8f0; z-index:1000;">
-        <div style="max-width:1280px; margin:0 auto; padding:1.5rem 2rem; display:flex; justify-content:space-between; align-items:center;">
-            <div style="display:flex; flex-direction:column;">
-                <h1 style="font-size:1.75rem; color:#0f172a; margin:0; display:flex; align-items:center; gap:0.5rem;">
+    <header class="site-header">
+        <div class="site-header-inner">
+            <div>
+                <h1 class="logo-title">
                     Gadgets 7/11
-                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Logo" style="height:48px;">
+                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Gadgets 7/11 logo" class="logo">
                 </h1>
-                <p style="font-size:0.75rem; color:#64748b; letter-spacing:0.2em; font-weight:500; margin:0.25rem 0 0;">
+                <p class="logo-tagline">
                     USEFUL | RELIABLE | AFFORDABLE
                 </p>
             </div>
 
-            <nav style="display:flex; gap:2rem; align-items:center;">
-                <a href="index.html" style="text-decoration:none; color:#0f172a; font-weight:500; font-size:0.95rem; transition:color 0.3s ease;">
-                    Home
-                </a>
-                <a href="productcat.html" style="text-decoration:none; color:#0f172a; font-weight:500; font-size:0.95rem; transition:color 0.3s ease;">
-                    Product Categories
-                </a>
-                <a href="productdetails.html" style="text-decoration:none; color:#0f172a; font-weight:500; font-size:0.95rem; transition:color 0.3s ease;">
-                    Product Details
-                </a>
-                <a href="shoppingcart.html" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; text-decoration:none; display:inline-flex; align-items:center; transition:all 0.3s ease;">
-                    Shopping Cart <i class="fa-solid fa-cart-shopping" style="margin-left:8px; color:white;"></i>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="productcat.html" class="nav-link">Product Categories</a>
+                <a href="productdetails.html" class="nav-link">Product Details</a>
+                <a href="shoppingcart.html" class="nav-link nav-link--primary">
+                    Shopping Cart <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </nav>
         </div>
     </header>
 
     <!-- Main Checkout Content -->
-    <main style="max-width:600px; margin:0 auto; padding:2rem;">
-        <h1 style="font-size:2rem; margin-bottom:1.5rem; color:#0f172a; text-align:center;">Checkout</h1>
+    <main class="confirmation-wrapper">
+        <h1 class="page-heading">Checkout</h1>
 
-        <div style="background:#ffffff; padding:2rem; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
-            <p style="color:#475569; margin-bottom:1rem;">
+        <div class="confirmation-card">
+            <p class="confirmation-message">
                 Thank you for your order! Proceed to the order confirmation page to complete your purchase.
             </p>
-            <a href="order-confirmation.html" style="padding:0.875rem 2rem; background:#0e7490; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; text-decoration:none; display:inline-block; margin-top:0.5rem; transition:all 0.3s ease;">
-                Place Order
+            <a href="order-confirmation.html" class="btn btn-primary">
+                Confirm Order
             </a>
         </div>
     </main>
+
+    <footer>
+        © 2026 Gadgets 7/11. All rights reserved.
+    </footer>
 
 </body>
 </html>

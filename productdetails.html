@@ -4,460 +4,345 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gadgets 7/11 | Product Details</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body style="margin:0; padding:0; font-family:'Manrope',system-ui,sans-serif; background-color:#f8fafc; color:#0f172a; line-height:1.6; padding-top:96px;">
+<body class="page-with-fixed-header">
 
     <!-- Header -->
-    <header style="position:fixed; top:0; left:0; right:0; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid #e2e8f0; z-index:1000; transition:all 0.3s;">
-        <div style="max-width:1280px; margin:0 auto; padding:1.25rem 2rem; display:flex; justify-content:space-between; align-items:center;">
-            <div style="display:flex; flex-direction:column;">
-                <h1 style="font-size:1.8rem; display:flex; align-items:center; gap:0.5rem; margin:0;">
+    <header class="site-header">
+        <div class="site-header-inner">
+            <div>
+                <h1 class="logo-title">
                     Gadgets 7/11
-                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Logo" style="height:48px;">
+                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Gadgets 7/11 logo" class="logo">
                 </h1>
-                <p style="font-size:0.75rem; color:#475569; letter-spacing:0.2em; font-weight:500; margin:0.25rem 0 0;">
+                <p class="logo-tagline">
                     USEFUL | RELIABLE | AFFORDABLE
                 </p>
             </div>
 
-            <nav style="display:flex; gap:2.5rem; align-items:center;">
-                <a href="index.html" style="text-decoration:none; color:#0f172a; font-weight:600; transition:color 0.3s; position:relative;">
-                    Home
-                </a>
-                <a href="productcat.html" style="text-decoration:none; color:#0f172a; font-weight:600; transition:color 0.3s; position:relative;">
-                    Product Categories
-                </a>
-                <a href="productdetails.html" style="text-decoration:none; color:#0e7490; font-weight:600; transition:color 0.3s; position:relative;">
-                    Product Details
-                </a>
-                <a href="aboutus.html" style="text-decoration:none; color:#0f172a; font-weight:600; transition:color 0.3s; position:relative;">
-                    About Us
-                </a>
-                <a href="contactus.html" style="text-decoration:none; color:#0f172a; font-weight:600; transition:color 0.3s; position:relative;">
-                    Contact Us
-                </a>
-                <a href="shoppingcart.html" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-flex; align-items:center;">
-                    Shopping Cart <i class="fa-solid fa-cart-shopping" style="margin-left:8px; color:white;"></i>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="productcat.html" class="nav-link">Product Categories</a>
+                <a href="productdetails.html" class="nav-link nav-link--active">Product Details</a>
+                <a href="aboutus.html" class="nav-link">About Us</a>
+                <a href="contactus.html" class="nav-link">Contact Us</a>
+                <a href="shoppingcart.html" class="nav-link nav-link--primary">
+                    Shopping Cart <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </nav>
         </div>
     </header>
 
     <!-- Smartphones & Tablets -->
-    <main style="max-width:1280px; margin:0 auto; padding:4rem 2rem 6rem;" id="smartphones-tablets">
-        <h2 style="font-size:2.5rem; text-align:center; margin-bottom:3rem; color:#0f172a; font-weight:700;">
-            Smartphones & Tablets
-        </h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2.5rem;">
+    <main class="page-centered section-detail" id="smartphones-tablets">
+        <h2 class="section-title-large">Smartphones & Tablets</h2>
+        <div class="product-detail-grid">
             
             <!-- iPhone 17 Pro Max -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800" alt="iPhone 17 Pro Max" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800" alt="iPhone 17 Pro Max">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Apple iPhone 17 Pro Max</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Apple iPhone 17 Pro Max</h3>
+                    <p class="product-detail-card__description">
                         6.9″ Super Retina XDR • A19 Bionic • 48MP triple cameras • AI features • All-day battery life
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R20 000
+                    <div class="product-detail-card__price">R20 000</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★★ 5.0</div>
+                        <blockquote class="review positive">"Incredible battery – lasts two days easily!" – Sarah K. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review positive">"Low-light camera is pro-level magic." – Mike T. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review negative">"Feels too heavy and bulky for daily use." – Alex R. <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Incredible battery – lasts two days easily!"</span> – Sarah K. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Low-light camera is pro-level magic."</span> – Mike T. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#dc2626; font-weight:500;">"Feels too heavy and bulky for daily use."</span> – Alex R. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#iphone17-pro-max" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#iphone17-pro-max" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
 
             <!-- Samsung Galaxy S25 Ultra -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800" alt="Galaxy S25 Ultra" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800" alt="Galaxy S25 Ultra">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Samsung Galaxy S25 Ultra</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Samsung Galaxy S25 Ultra</h3>
+                    <p class="product-detail-card__description">
                         6.9″ Dynamic AMOLED 2X • Snapdragon 8 Elite • 200MP camera • S Pen • Titanium build
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R25 000
+                    <div class="product-detail-card__price">R25 000</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★☆ 4.8</div>
+                        <blockquote class="review positive">"S Pen productivity is unmatched!" – Jordan L. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review positive">"Brightest, smoothest display ever." – Taylor M. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review negative">"Overheats during camera use and battery drains faster than expected." – Chris P. <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"S Pen productivity is unmatched!"</span> – Jordan L. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Brightest, smoothest display ever."</span> – Taylor M. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#dc2626; font-weight:500;">"Overheats during camera use and battery drains faster than expected."</span> – Chris P. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#galaxy-s25-ultra" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#galaxy-s25-ultra" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
 
             <!-- Google Pixel 10 Pro -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=800" alt="Pixel 10 Pro" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?w=800" alt="Pixel 10 Pro">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Google Pixel 10 Pro</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Google Pixel 10 Pro</h3>
+                    <p class="product-detail-card__description">
                         Top AI camera system • Tensor G5 • 7 years updates • Super battery
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R15 000
+                    <div class="product-detail-card__price">R15 000</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★☆ 4.7</div>
+                        <blockquote class="review positive">"Photos are so natural and AI edits are brilliant." – Emily S. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review positive">"Long software support gives peace of mind." – David W. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review negative">"Some GPU glitches and occasional lag in games." – Lisa H. <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Photos are so natural and AI edits are brilliant."</span> – Emily S. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Long software support gives peace of mind."</span> – David W. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#dc2626; font-weight:500;">"Some GPU glitches and occasional lag in games."</span> – Lisa H. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#pixel-10-pro" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#pixel-10-pro" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Computers, Laptops & Accessories -->
-    <main style="max-width:1280px; margin:0 auto; padding:4rem 2rem 6rem;" id="ComputerAcc">
-        <h2 style="font-size:2.5rem; text-align:center; margin-bottom:3rem; color:#0f172a; font-weight:700;">
-            Computers, Laptops & Accessories
-        </h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2.5rem;">
+    <main class="page-centered section-detail" id="ComputerAcc">
+        <h2 class="section-title-large">Computers, Laptops & Accessories</h2>
+        <div class="product-detail-grid">
             
             <!-- Apple Mac PC (M4, 2025) -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800" alt="Apple Mac PC" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800" alt="Apple Mac PC">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Apple Mac PC (M4, 2025)</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Apple Mac PC (M4, 2025)</h3>
+                    <p class="product-detail-card__description">
                         Ultra Retina OLED display • M4 chip • Pencil Pro support • Ultra-thin & silent design
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R40 000
+                    <div class="product-detail-card__price">R40 000</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★★ 5.0</div>
+                        <blockquote class="review positive">"Silent powerhouse – perfect for editing!" – Ryan B. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review positive">"Handles heavy tasks effortlessly." – Sophia G. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review negative">"Limited ports – need dongles for everything." – Pat N. <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Silent powerhouse – perfect for editing!"</span> – Ryan B. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Handles heavy tasks effortlessly."</span> – Sophia G. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#dc2626; font-weight:500;">"Limited ports – need dongles for everything."</span> – Pat N. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#apple-mac-pc-m4-2025" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#apple-mac-pc-m4-2025" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
 
             <!-- MacBook Pro (M3, 2023) -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://cdn.pixabay.com/photo/2017/08/03/11/22/laptop-2575689_1280.jpg" alt="MacBook Pro" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/03/11/22/laptop-2575689_1280.jpg" alt="MacBook Pro">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">MacBook Pro (M3, 2023)</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">MacBook Pro (M3, 2023)</h3>
+                    <p class="product-detail-card__description">
                         14″ Liquid Retina XDR • M3 Pro chip • Exceptional battery • ProMotion display
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R30 000
+                    <div class="product-detail-card__price">R30 000</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★★ 4.9</div>
+                        <blockquote class="review positive">"Battery life is insane for pro work." – Jamie K. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review positive">"Display and audio are top-tier." – Nicole F. <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.9
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Battery life is insane for pro work."</span> – Jamie K. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Display and audio are top-tier."</span> – Nicole F. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#macbook-pro-m3-2023" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#macbook-pro-m3-2023" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
 
             <!-- AirPods Pro (Latest) -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=800" alt="AirPods" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=800" alt="AirPods">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">AirPods Pro (Latest)</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">AirPods Pro (Latest)</h3>
+                    <p class="product-detail-card__description">
                         Adaptive ANC • Spatial Audio • USB-C • Improved fit & sound quality
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R7 000
+                    <div class="product-detail-card__price">R7 000</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★☆ 4.8</div>
+                        <blockquote class="review positive">"ANC blocks out everything on flights!" – Kevin D. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review positive">"Sound is rich and clear now." – Lisa H. <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review negative">"Fit still slips during intense workouts." – Alex R. <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"ANC blocks out everything on flights!"</span> – Kevin D. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Sound is rich and clear now."</span> – Lisa H. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#dc2626; font-weight:500;">"Fit still slips during intense workouts."</span> – Alex R. <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#air-pods" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#air-pods" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Gaming & Entertainment -->
-    <main style="max-width:1280px; margin:0 auto; padding:4rem 2rem 6rem;" id="gaming">
-        <h2 style="font-size:2.5rem; text-align:center; margin-bottom:3rem; color:#0f172a; font-weight:700;">
-            Gaming & Entertainment
-        </h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2.5rem;">
+    <main class="page-centered section-detail" id="gaming">
+        <h2 class="section-title-large">Gaming & Entertainment</h2>
+        <div class="product-detail-grid">
             
             <!-- Ryzen 4 Gaming PC -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://cdn.mos.cms.futurecdn.net/zWuViGWYZdyx2w42EgZ3bZ.jpg" alt="Ryzen Gaming PC" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://cdn.mos.cms.futurecdn.net/zWuViGWYZdyx2w42EgZ3bZ.jpg" alt="Ryzen Gaming PC">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Ryzen 4 Gaming PC</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Ryzen 4 Gaming PC</h3>
+                    <p class="product-detail-card__description">
                         High-performance Ryzen setup • RGB tower • Powerful GPU • Mechanical keyboard & mouse
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R60 000
+                    <div class="product-detail-card__price">R60 000</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★☆ 4.7</div>
+                        <blockquote class="review positive">"Ultra settings with zero lag!" – GamerX <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review positive">"RGB looks epic – great value." – TechFan92 <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Ultra settings with zero lag!"</span> – GamerX <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"RGB looks epic – great value."</span> – TechFan92 <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#ryzen-4-gaming-pc" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#ryzen-4-gaming-pc" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
 
             <!-- Home Entertainment System -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://thumbs.dreamstime.com/b/modern-home-entertainment-setup-featuring-large-flat-screen-television-audio-system-stylish-living-area-showcases-351988377.jpg" alt="Home Entertainment" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://thumbs.dreamstime.com/b/modern-home-entertainment-setup-featuring-large-flat-screen-television-audio-system-stylish-living-area-showcases-351988377.jpg" alt="Home Entertainment">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Home Entertainment System</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Home Entertainment System</h3>
+                    <p class="product-detail-card__description">
                         Large 4K TV • Tower speakers • Soundbar & AV receiver • Immersive setup
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R30 000
+                    <div class="product-detail-card__price">R30 000</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★☆ 4.6</div>
+                        <blockquote class="review positive">"Feels like a real theater at home!" – FamilyGuy <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review negative">"Setup was more complicated than expected." – HomeTheaterPro <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.6
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Feels like a real theater at home!"</span> – FamilyGuy <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#dc2626; font-weight:500;">"Setup was more complicated than expected."</span> – HomeTheaterPro <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#home-entertainment-system" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#home-entertainment-system" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Smart Home Devices -->
-    <main style="max-width:1280px; margin:0 auto; padding:4rem 2rem 6rem;" id="smarthome">
-        <h2 style="font-size:2.5rem; text-align:center; margin-bottom:3rem; color:#0f172a; font-weight:700;">
-            Smart Home Devices
-        </h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2.5rem;">
+    <main class="page-centered section-detail" id="smarthome">
+        <h2 class="section-title-large">Smart Home Devices</h2>
+        <div class="product-detail-grid">
             
             <!-- Google Nest Hub Max (2026) -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://images.crutchfieldonline.com/ImageHandler/trim/869/652/products/2019/36/806/g806GA00639-o_other1.jpg" alt="Google Nest Hub Max" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://images.crutchfieldonline.com/ImageHandler/trim/869/652/products/2019/36/806/g806GA00639-o_other1.jpg" alt="Google Nest Hub Max">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Google Nest Hub Max (2026)</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Google Nest Hub Max (2026)</h3>
+                    <p class="product-detail-card__description">
                         10" HD touchscreen • Google Assistant • Spatial audio • Matter hub • Video calling
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R4 999
+                    <div class="product-detail-card__price">R4 999</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★☆ 4.7</div>
+                        <blockquote class="review positive">"Perfect for recipes and smart control." – MomOf3 <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review negative">"Occasional connectivity drops with devices." – SmartHomeUser <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.7
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Perfect for recipes and smart control."</span> – MomOf3 <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#dc2626; font-weight:500;">"Occasional connectivity drops with devices."</span> – SmartHomeUser <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#google-nest-hub-max-2026" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#google-nest-hub-max-2026" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
 
             <!-- Philips Hue Starter Kit (4 bulbs) -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://m.media-amazon.com/images/I/51qRz8pp+eL._AC_UF894,1000_QL80_.jpg" alt="Philips Hue" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://m.media-amazon.com/images/I/51qRz8pp+eL._AC_UF894,1000_QL80_.jpg" alt="Philips Hue">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Philips Hue Starter Kit (4 bulbs)</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Philips Hue Starter Kit (4 bulbs)</h3>
+                    <p class="product-detail-card__description">
                         16M colors • Matter compatible • Voice control • Scenes & schedules
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R3 499
+                    <div class="product-detail-card__price">R3 499</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★☆ 4.8</div>
+                        <blockquote class="review positive">"Vibrant colors transform the room mood!" – InteriorFan <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review positive">"Easy app and voice integration." – TechMom <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.8
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Vibrant colors transform the room mood!"</span> – InteriorFan <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Easy app and voice integration."</span> – TechMom <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#philips-hue-starter-kit" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#philips-hue-starter-kit" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
 
             <!-- Aqara Smart Lock U400 -->
-            <div style="background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 12px 32px rgba(15,23,42,0.08); transition:transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column;">
-                <div style="width:100%; height:260px; overflow:hidden;">
-                    <img src="https://m.media-amazon.com/images/I/61STzCIW1TL._AC_UF1000,1000_QL80_.jpg" alt="Aqara Smart Lock" style="width:100%; height:260px; object-fit:cover;">
+            <div class="product-detail-card">
+                <div class="product-detail-card__image">
+                    <img src="https://m.media-amazon.com/images/I/61STzCIW1TL._AC_UF1000,1000_QL80_.jpg" alt="Aqara Smart Lock">
                 </div>
-                <div style="padding:1.75rem 2rem; flex:1; display:flex; flex-direction:column;">
-                    <h3 style="font-size:1.5rem; margin-bottom:0.75rem; color:#0f172a;">Aqara Smart Lock U400</h3>
-                    <p style="font-size:0.95rem; color:#475569; margin-bottom:1rem; flex:1;">
+                <div class="product-detail-card__body">
+                    <h3 class="product-detail-card__title">Aqara Smart Lock U400</h3>
+                    <p class="product-detail-card__description">
                         Fingerprint/keypad/app unlock • Matter support • Built-in camera • Auto-lock
                     </p>
-                    <div style="font-size:1.4rem; font-weight:700; color:#0e7490; margin:1rem 0;">
-                        R4 299
+                    <div class="product-detail-card__price">R4 299</div>
+
+                    <div class="product-reviews">
+                        <h4 class="reviews-title">Customer Reviews</h4>
+                        <div class="stars">★★★★☆ 4.6</div>
+                        <blockquote class="review positive">"Fingerprint is super fast – love no keys!" – BusyDad <span class="review-meta">(Verified Buyer)</span></blockquote>
+                        <blockquote class="review negative">"Camera setup took longer than advertised." – HomeSecure <span class="review-meta">(Verified Buyer)</span></blockquote>
                     </div>
 
-                    <div style="margin:1.25rem 0; font-size:0.92rem; border-top:1px solid #e2e8f0; padding-top:1.25rem;">
-                        <h4 style="font-size:1.1rem; color:#0f172a; margin-bottom:0.75rem;">Customer Reviews</h4>
-                        <div style="color:#f59e0b; margin-bottom:0.75rem; font-size:1rem;">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> 4.6
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#16a34a; font-weight:500;">"Fingerprint is super fast – love no keys!"</span> – BusyDad <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                        <div style="margin:0.75rem 0; padding-left:1rem; border-left:3px solid #e2e8f0;">
-                            <span style="color:#dc2626; font-weight:500;">"Camera setup took longer than advertised."</span> – HomeSecure <span style="font-size:0.8rem; color:#64748b; margin-left:0.5rem; font-style:italic;">(Verified Buyer)</span>
-                        </div>
-                    </div>
-
-                    <a href="shoppingcart.html#aqara-smart-lock-u400" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block; text-align:center;">
-                        Add to Cart
-                    </a>
+                    <a href="shoppingcart.html#aqara-smart-lock-u400" class="btn btn-dark">Add to Cart</a>
                 </div>
             </div>
         </div>
+
+        <!-- Wishlist prototype (Tutorial 3 requirement) -->
+        <section class="wishlist" aria-labelledby="wishlist-heading">
+            <h2 id="wishlist-heading">Save Items to Your Wishlist</h2>
+            <p>
+                This is a prototype wishlist. Tick the gadgets you are interested in now –
+                in a future tutorial we will make this save using JavaScript and Local Storage.
+            </p>
+            <ul class="wishlist-list">
+                <li><label><input type="checkbox" name="wishlist" value="iphone17"> Apple iPhone 17 Pro Max</label></li>
+                <li><label><input type="checkbox" name="wishlist" value="galaxy-s25"> Samsung Galaxy S25 Ultra</label></li>
+                <li><label><input type="checkbox" name="wishlist" value="pixel-10"> Google Pixel 10 Pro</label></li>
+                <li><label><input type="checkbox" name="wishlist" value="macbook-m3"> MacBook Pro (M3, 2023)</label></li>
+                <li><label><input type="checkbox" name="wishlist" value="ryzen-gaming-pc"> Ryzen 4 Gaming PC</label></li>
+            </ul>
+            <p class="wishlist-tip">
+                Tip: Take a screenshot of your wishlist or jot it down before you leave the page.
+            </p>
+        </section>
     </main>
 
+    <footer>
+        © 2026 Gadgets 7/11. All rights reserved.
+    </footer>
 </body>
 </html>

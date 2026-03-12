@@ -4,92 +4,114 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gadgets 7/11 | Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body style="margin:0; padding:0; font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif; background-color:#f8fafc; color:#0f172a; line-height:1.6; padding-top:96px;">
+<body class="page-with-fixed-header">
 
     <!-- Header -->
-    <header style="position:fixed; top:0; left:0; right:0; background:rgba(255,255,255,0.9); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); border-bottom:1px solid #e2e8f0; z-index:1000;">
-        <div style="max-width:1280px; margin:0 auto; padding:1.5rem 2rem; display:flex; justify-content:space-between; align-items:center;">
-            <div style="display:flex; flex-direction:column;">
-                <h1 style="font-size:1.75rem; color:#0f172a; margin:0; display:flex; align-items:center; gap:0.5rem;">
+    <header class="site-header">
+        <div class="site-header-inner">
+            <div>
+                <h1 class="logo-title">
                     Gadgets 7/11
-                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Gadgets 7/11 logo" style="height:48px;">
+                    <img src="—Pngtree—gadget icon graphic design template_3790049.png" alt="Gadgets 7/11 logo" class="logo">
                 </h1>
-                <p style="font-size:0.75rem; color:#64748b; letter-spacing:0.2em; font-weight:500; margin:0.25rem 0 0;">
+                <p class="logo-tagline">
                     USEFUL | RELIABLE | AFFORDABLE
                 </p>
             </div>
 
-            <nav style="display:flex; gap:2rem; align-items:center;">
-                <a href="index.html" style="text-decoration:none; color:#0f172a; font-weight:500; font-size:0.95rem; position:relative; transition:color 0.3s ease;">
-                    Home
-                </a>
-                <a href="productcat.html" style="text-decoration:none; color:#0f172a; font-weight:500; font-size:0.95rem; position:relative; transition:color 0.3s ease;">
-                    Product Categories
-                </a>
-                <a href="productdetails.html" style="text-decoration:none; color:#0f172a; font-weight:500; font-size:0.95rem; position:relative; transition:color 0.3s ease;">
-                    Product Details
-                </a>
-                <a href="aboutus.html" style="text-decoration:none; color:#0f172a; font-weight:500; font-size:0.95rem; position:relative; transition:color 0.3s ease;">
-                    About Us
-                </a>
-                <a href="contactus.html" style="text-decoration:none; color:#0e7490; font-weight:500; font-size:0.95rem; position:relative; transition:color 0.3s ease;">
-                    Contact Us
-                </a>
-                <a href="shoppingcart.html" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; text-decoration:none; display:inline-flex; align-items:center; transition:all 0.3s ease;">
-                    Shopping Cart <i class="fa-solid fa-cart-shopping" style="margin-left:8px; color:white;"></i>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="productcat.html" class="nav-link">Product Categories</a>
+                <a href="productdetails.html" class="nav-link">Product Details</a>
+                <a href="aboutus.html" class="nav-link">About Us</a>
+                <a href="contactus.html" class="nav-link nav-link--active">Contact Us</a>
+                <a href="shoppingcart.html" class="nav-link nav-link--primary">
+                    Shopping Cart <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main style="max-width:1100px; margin:0 auto; padding:3rem 2rem 4rem; display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1.2fr); gap:2.5rem;">
+    <main class="contact-layout">
 
         <!-- Contact Intro -->
-        <section style="display:flex; flex-direction:column;">
-            <h1 style="font-size:2.3rem; margin-bottom:0.75rem; color:#0f172a;">Contact Gadgets 7/11</h1>
-            <p style="font-size:1.02rem; color:#64748b; margin:0 0 1.75rem;">
-                Have a question about a product, an order, or what to buy next?
+        <section class="contact-info">
+            <h1 class="contact-title">Contact Gadgets 7/11</h1>
+            <p class="contact-subtitle">
+                Have a question about a product, an order, or what to buy next?<br>
                 Reach out and we’ll gladly help you choose the right gadget.
             </p>
 
-            <div style="margin-top:1.75rem; font-size:0.98rem; color:#64748b;">
-                <p style="margin-bottom:0.5rem;"><strong style="color:#0f172a;">Email:</strong> support@gadgets711.co.za</p>
-                <p style="margin-bottom:0.5rem;"><strong style="color:#0f172a;">Phone:</strong> 0664661333</p>
-                <p style="margin-bottom:0.5rem;"><strong style="color:#0f172a;">Store hours:</strong> Monday – Friday, 09:00 – 18:00</p>
-                <p style="margin-bottom:0.5rem;"><strong style="color:#0f172a;">Address:</strong><br/>
-                    Gadgets 7/11<br/>
-                    21 Tech Lane, City Centre<br/>
-                    Cape Town, 8001<br/>
+            <div class="contact-details">
+                <p><strong>Email:</strong> support@gadgets711.co.za</p>
+                <p><strong>Phone:</strong> 0664661333</p>
+                <p><strong>Store hours:</strong> Monday – Friday, 09:00 – 18:00</p>
+                <p><strong>Address:</strong><br>
+                    Gadgets 7/11<br>
+                    21 Tech Lane, City Centre<br>
+                    Cape Town, 8001<br>
                     South Africa
                 </p>
             </div>
         </section>
 
         <!-- Contact Form Card -->
-        <section style="background:#ffffff; padding:2rem; border-radius:16px; box-shadow:0 10px 30px rgba(15,23,42,0.08);">
-            <h2 style="font-size:1.4rem; margin-bottom:1rem; color:#0f172a;">Send us a message</h2>
+        <section class="contact-card">
+            <h2 class="form-title">Send us a message</h2>
             <form action="#" method="post">
-                <div style="margin-bottom:1rem;">
-                    <label for="name" style="display:block; font-size:0.9rem; margin-bottom:0.35rem; color:#64748b;">Full name</label>
-                    <input id="name" name="name" type="text" required style="width:100%; padding:0.7rem 0.8rem; border-radius:8px; border:1px solid #e2e8f0; font-family:inherit; font-size:0.95rem; outline:none; transition:border-color 0.3s;" />
+                <div class="form-field">
+                    <label for="name">Full name</label>
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        placeholder="Enter your full name"
+                        autofocus
+                    />
                 </div>
-                <div style="margin-bottom:1rem;">
-                    <label for="email" style="display:block; font-size:0.9rem; margin-bottom:0.35rem; color:#64748b;">Email address</label>
-                    <input id="email" name="email" type="email" required style="width:100%; padding:0.7rem 0.8rem; border-radius:8px; border:1px solid #e2e8f0; font-family:inherit; font-size:0.95rem; outline:none; transition:border-color 0.3s;" />
+                <div class="form-field">
+                    <label for="email">Email address</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="name@example.com"
+                    />
                 </div>
-                <div style="margin-bottom:1rem;">
-                    <label for="message" style="display:block; font-size:0.9rem; margin-bottom:0.35rem; color:#64748b;">How can we help?</label>
-                    <textarea id="message" name="message" required style="width:100%; padding:0.7rem 0.8rem; border-radius:8px; border:1px solid #e2e8f0; font-family:inherit; font-size:0.95rem; outline:none; transition:border-color 0.3s; resize:vertical; min-height:120px;"></textarea>
+                <div class="form-field">
+                    <label for="subject">Subject</label>
+                    <input
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        required
+                        placeholder="Product question, order help, etc."
+                    />
                 </div>
-                <button type="submit" style="padding:0.875rem 2rem; background:#0f172a; color:white; border:none; border-radius:8px; font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.3s ease; font-family:'Manrope',sans-serif;">
+                <div class="form-field">
+                    <label for="message">How can we help?</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        required
+                        placeholder="Tell us a bit more about what you need help with..."
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">
                     Send Message
                 </button>
             </form>
         </section>
     </main>
 
+    <footer>
+        © 2026 Gadgets 7/11. All rights reserved.
+    </footer>
 </body>
 </html>
