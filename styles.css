@@ -795,10 +795,6 @@ main {
   line-height: 1.5;
 }
 
-.about-content {
-  /* Optional – gives consistent spacing if you add more sections later */
-}
-
 .about-card-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
