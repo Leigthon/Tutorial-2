@@ -12,6 +12,17 @@
   box-sizing: border-box;
 }
 
+/* --------- Wishlist Styling -------------------*/
+.heart{
+  font-size: 28px; 
+  color: red; 
+  cursor: pointer;
+}
+/*<a class="heart">
+               
+               </a>*/
+
+
 body {
   margin: 0;
   padding: 0;
@@ -284,6 +295,7 @@ main {
 }
 
 .product-card__price {
+  padding: bottom(50rem);
   font-size: 1.15rem;
   color: #e11d48;
   font-weight: 700;
@@ -362,7 +374,7 @@ main {
 .home-videos video {
   width: 100%;
   border-radius: 1rem;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.2);
+  /* box-shadow: 0 12px 30px rgba(15, 23, 42, 0.2); */
 }
 
 /* ---------- Product category & details grids ---------- */
@@ -632,6 +644,7 @@ main {
 }
 
 .product-detail-card__price {
+  padding-bottom:1rem;
   font-size: 1.4rem;
   font-weight: 700;
   color: #0e7490;
@@ -681,9 +694,17 @@ main {
   font-style: italic;
 }
 
+
+.button-group {
+  display: flex;
+  gap: 1rem;                 /* 16px space between buttons – feels balanced */
+  flex-wrap: wrap;           /* buttons wrap nicely on mobile */
+  align-items: center;       /* vertical alignment if heights differ */
+  justify-content:center;
+}
 /* Dark button variant (matches .nav-link--primary style) */
 .btn-dark {
-  padding: 0.875rem 2rem;
+  padding: 0.875rem 7rem 0.875rem 7rem;
   background: #0f172a;
   color: white;
   border: none;
@@ -697,11 +718,33 @@ main {
   text-align: center;
 }
 
+.btn-red{
+  align-self: center;
+  /* padding: 0.875rem 2rem; */
+  padding: 0.875rem 5.5rem 0.875rem 5.5rem;
+  background: rgba(252, 15, 15, 0.475);
+  color:white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  gap:8px;
+}
+
 .btn-dark:hover {
   background: #020617;
+  background: black;
   transform: translateY(-1px);
 }
 
+.btn-red:hover {
+  background: rgb(216, 36, 36);
+  transform: translateY(-1px);
+}
 /* Wishlist tip */
 .wishlist-tip {
   font-size: 0.9rem;
@@ -709,8 +752,62 @@ main {
   margin: 0;
 }
 
+/*wishlist button click functionality*/
 
-/* ───────────────────────────────────────────────
+/* Hide the real checkbox */
+.wishlist-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Base heart styling (outline) */
+.wishlist-heart {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;           /* required for solid style */
+  transition: color 0.2s, transform 0.2s;
+}
+
+/* Default = outline (regular) */
+.wishlist-heart::before {
+  content: "\f08a";           /* fa-regular fa-heart unicode */
+  font-weight: 400;           /* regular weight = outline */
+  color: white;               /* or currentColor / inherit */
+}
+
+/* When checked → filled heart */
+.wishlist-checkbox:checked + .btn-red .wishlist-heart::before {
+  content: "\f004";           /* fa-solid fa-heart unicode */
+  font-weight: 900;
+  background: rgb(230, 227, 227);  /* darker red when active */
+  color:red;
+  transform: scale(1.15);     /* optional pop effect */
+}
+
+/* Optional: change button background or text when added */
+.wishlist-checkbox:checked + .btn-red {
+  background: rgb(230, 227, 227);   /* darker red when active */
+  color:red;
+}
+
+/* Hide/show text depending on state */
+.wishlist-text-add {
+  display: inline;
+}
+.wishlist-text-remove {
+  display: none;
+}
+
+.wishlist-checkbox:checked ~ .btn-red .wishlist-text-add {
+  display: none;
+}
+.wishlist-checkbox:checked ~ .btn-red .wishlist-text-remove {
+  display: inline;
+}
+
+
+/*
    Contact Page – Specific Overrides & Enhancements
    ─────────────────────────────────────────────── */
 
@@ -729,7 +826,7 @@ main {
 }
 
 .contact-info {
-  /* Optional: slight breathing room if needed */
+  /* Optional: slight breathing room */
   margin-bottom: 1rem;
 }
 
@@ -749,7 +846,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/* Already have .form-title in many designs – if you want consistency: */
+/* .form-title in many designs – if you want consistency: */
 .form-title {
   font-size: 1.4rem;
   margin-bottom: 1.5rem;
@@ -757,7 +854,7 @@ main {
   font-weight: 600;
 }
 
-/* Optional: make the form card slightly more prominent */
+/* O make the form card slightly more prominent */
 .contact-card {
   background: #ffffff;
   padding: 2.25rem;          /* slightly more generous than 2rem */
@@ -765,7 +862,7 @@ main {
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.09);
 }
 
-/* Optional: better button alignment / full-width feel on mobile */
+/* better button alignment / full-width feel on mobile */
 @media (max-width: 640px) {
   .contact-card .btn {
     width: 100%;
@@ -809,7 +906,7 @@ main {
   line-height: 1.7;
 }
 
-/* Optional: make the card slightly more prominent or spacious */
+/*  make the card slightly more prominent or spacious */
 .about-card {
   padding: 2.25rem;           /* a bit more generous than the default 2rem */
   background: #ffffff;
@@ -817,7 +914,7 @@ main {
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.09);
 }
 
-/* Optional: better readability on narrow screens */
+/* better readability on narrow screens */
 @media (max-width: 640px) {
   .about-title {
     font-size: 2.1rem;
@@ -853,14 +950,14 @@ main {
   padding: 2.5rem 2rem;
 }
 
-/* Optional: make the button more prominent */
+/*  make the button more prominent */
 .confirmation-card .btn-primary {
   font-size: 1.05rem;
   padding: 1rem 2.5rem;
   min-width: 220px;
 }
 
-/* Optional: subtle emphasis on mobile */
+/* subtle emphasis on mobile */
 @media (max-width: 640px) {
   .page-heading {
     font-size: 1.8rem;
@@ -903,7 +1000,7 @@ main {
   margin-right: auto;
 }
 
-/* Optional: make the success card stand out a bit more */
+/*  make the success card stand out a bit more */
 .confirmation-success {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -911,7 +1008,7 @@ main {
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
 }
 
-/* Optional: larger / more prominent button */
+/* larger / more prominent button */
 .confirmation-success .btn-primary {
   padding: 1rem 2.5rem;
   font-size: 1.05rem;
