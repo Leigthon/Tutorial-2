@@ -136,6 +136,7 @@ main {
   background: #0f172a;
   color: #ffffff;
   font-weight: 600;
+  font-size: 12px;
   letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
@@ -155,6 +156,30 @@ main {
   padding-top: 96px;
 }
 
+
+.nav-link--secondary {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgb(211, 26, 26);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 10px;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+}
+
+.nav-link--secondary i {
+  margin-left: 0.5rem;
+}
+
+.nav-link--secondary:hover {
+  background:rgb(255, 126, 126) ;
+}
+
+.page-with-fixed-header {
+  padding-top: 96px;
+}
 /* ---------- Buttons & badges ---------- */
 
 .btn {
